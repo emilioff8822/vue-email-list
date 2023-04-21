@@ -15,20 +15,26 @@ return {
 },
 
 methods: {
-getApi (){
-
-}
   
-
-
-
+  getApi() {
+    // ciclo for per ottenere 10 indirizzi email
+    for (let i = 0; i < 10; i++) {
+      // Effettua una richiesta GET all'API
+      axios.get(this.apiUrl)
+        .then(response => {
+          // Aggiungi l'indirizzo email ottenuto dall'API all'array 'emails'
+          this.emails.push(response.data.response);
+        })
+        .catch(error => {
+          // In caso di errore, stampa un messaggio di errore nella console
+          console.error('Errore nell acquisizione della email:', error);
+        });
+    }
+  }
 },
 
-mounted(){
+mounted() {
+  // Chiamo il metodo 'getApi()' quando l'applicazione viene montata
   this.getApi();
-
-
-
 }
-
-}).mount("#app")
+}).mount("#app");
