@@ -22,9 +22,9 @@ methods: {
 
     for (let i = 0; i < 10; i++) {
       axios.get(this.apiUrl)
-        .then(response => {
+        .then(result => {
           // Aggiungo l'indirizzo email ottenuto dall'API all'array 'emails'
-          this.emails.push(response.data.response);
+          this.emails.push(result.data.response);
           mailCount++;
 
           if (mailCount ===10){
