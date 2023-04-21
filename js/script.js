@@ -22,11 +22,11 @@ methods: {
       // Effettua una richiesta GET all'API
       axios.get(this.apiUrl)
         .then(response => {
-          // Aggiungi l'indirizzo email ottenuto dall'API all'array 'emails'
+          // Aggiungo l'indirizzo email ottenuto dall'API all'array 'emails'
           this.emails.push(response.data.response);
         })
         .catch(error => {
-          // In caso di errore, stampa un messaggio di errore nella console
+          // In caso di errore, stampo un messaggio di errore nella console
           console.error('Errore nell acquisizione della email:', error);
         });
     }
