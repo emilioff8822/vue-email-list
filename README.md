@@ -5,7 +5,12 @@ Aggiungo l'indirizzo email ottenuto dall'API all'array 'emails'
  Chiamo il metodo 'getApi()' quando l'applicazione viene montata
 in html creo un ul li con vor per stampare le email
 
-per il bonus uso axios.all(requests) per eseguire un array di richieste Axios contemporaneamente. 
-axios.all() aspetta che tutte le richieste siano completate prima di procedere.
+BONUS 
 
-uso la variabile isLoading per il cariacamento, quando e' vera viene mostrato la rotella di cariacamento quando e' false la lista completa
+per il bonus un ciclo for ed una variabile che conta le mail, mailcount
+ogni volta che un indirizzo mail casuale dell'api e' aggiunto all'array email mailcount viene incrementata di 1 
+
+quando tutte le mail sono state ricevute e mailcount===10 , isLoading diventa false in modo da nascondere il caricamento e' mostrare la lista.
+
+
+uso la variabile isLoading per il cariacamento, quando e' vera viene mostrato la rotella di cariacamento quando e' false la lista completa, utilizzando v-if e v-else in html
