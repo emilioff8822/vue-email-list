@@ -21,7 +21,8 @@
 </head>
 <body>
   <div id="app">
-    <ul>
+    <div v-if="isLoading" class="lds-hourglass"></div>
+    <ul v-else>
       <li v-for=" email in emails">
         {{email}}
       </li>
