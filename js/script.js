@@ -18,15 +18,20 @@ return {
 methods: {
   
   getApi() {
-    let requests = [];
-    this.isLoading = true;
+    let mailCount = 0;
 
     for (let i = 0; i < 10; i++) {
       axios.get(this.apiUrl)
         .then(response => {
           // Aggiungo l'indirizzo email ottenuto dall'API all'array 'emails'
           this.emails.push(response.data.response);
+          mailCount++;
+
+          if (mailCount ===10){
+          
           this.isLoading = false
+
+          }
 
         })
         .catch(error => {
